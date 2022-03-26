@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Qual o usuário que está fazendo o empréstimo</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="standard">
+        <mat-label>Usuário</mat-label>
+        <input [(ngModel)]="data.userId" matInput placeholder="Alessandro...">
+        <mat-icon color="primary" matSuffix>people</mat-icon>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data.userId" cdkFocusInitial>Confirmar</button>
+</div>

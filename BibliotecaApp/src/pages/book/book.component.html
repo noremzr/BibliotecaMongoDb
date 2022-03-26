@@ -1,0 +1,104 @@
+<div class="container">
+
+    <div class="form">
+        <mat-form-field appearance="standard">
+            <mat-label>Título</mat-label>
+            <input [(ngModel)]="title" matInput placeholder="Senhor Dos Anéis...">
+            <mat-icon color="primary" matSuffix>title</mat-icon>
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field appearance="standard">
+            <mat-label>Autor</mat-label>
+            <input [(ngModel)]="autor" matInput placeholder="Alessandro...">
+            <mat-icon color="primary" matSuffix>people</mat-icon>
+        </mat-form-field>
+        &nbsp;
+        <div class="spacer">
+            <button mat-icon-button color="primary"  (click)="saveBook()">
+                <mat-icon  class="Salvar">save</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="spacer-end">
+
+        <mat-form-field appearance="standard">
+            <mat-label>Pesquisar</mat-label>
+            <input matInput (keyup)="filtrar($event)" #input>
+        </mat-form-field>
+    </div>
+    <table mat-table [dataSource]="filterDataSource" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Título
+            </th>
+            <td mat-cell *matCellDef="let book"> {{book.title}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="autor">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Autor
+            </th>
+            <td mat-cell *matCellDef="let book"> {{book.autor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastLoanStart">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Último Empréstimo
+            </th>
+
+            <td mat-cell *matCellDef="let book"> 
+                <ng-container *ngIf="book.lastLoan">
+                {{book.lastLoan.borrowed|date:'dd/MM/yyyy'}} 
+               </ng-container>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastLoanUser">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Atualmente Com
+            </th>
+
+            <td mat-cell *matCellDef="let book"> 
+                <ng-container *ngIf="book.lastLoan && book.lastLoan.returned==null">
+                {{book.lastLoan.userId}} 
+               </ng-container>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="countLoans">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Conta Empréstimos
+            </th>
+
+            <td mat-cell *matCellDef="let book"> 
+                <ng-container *ngIf="book.listLoan">
+                {{book.listLoan.length}} 
+               </ng-container>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Ações
+            </th>
+            <td mat-cell *matCellDef="let book">
+                <ng-container *ngIf="book.lastLoan==null||book.lastLoan.returned!=null">
+                    <mat-icon class="icon" color="primary" title="Emprestar Livro" (click)="emprestarLivro(book)">bookmark icon</mat-icon>
+                </ng-container>
+                <ng-container *ngIf="book.lastLoan!=null&&book.lastLoan.returned==null">
+                    <mat-icon class="icon" color="primary" title="Devolver Livro" (click)="devolverLivro(book)"> assignment turned in icon</mat-icon>
+                </ng-container>
+                &nbsp;
+                <mat-icon class="icon" color="primary" title="Editar Livro" (click)="editarLivro(book)">edit</mat-icon>
+                &nbsp;
+                <mat-icon class="icon" color="warn" title="Remover Livro" (click)="removeBook(book)">remove</mat-icon>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+

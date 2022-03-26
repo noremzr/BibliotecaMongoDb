@@ -1,0 +1,152 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Biblioteca\\BibliotecaApi\\BibliotecaTeste\\BibliotecaTeste.csproj": {}
+  },
+  "projects": {
+    "E:\\Biblioteca\\BibliotecaApi\\BibliotecaDLL\\BibliotecaDLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Biblioteca\\BibliotecaApi\\BibliotecaDLL\\BibliotecaDLL.csproj",
+        "projectName": "BibliotecaDLL",
+        "projectPath": "E:\\Biblioteca\\BibliotecaApi\\BibliotecaDLL\\BibliotecaDLL.csproj",
+        "packagesPath": "C:\\Users\\NoremZ\\.nuget\\packages\\",
+        "outputPath": "E:\\Biblioteca\\BibliotecaApi\\BibliotecaDLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NoremZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.15.0, )"
+            },
+            "MongoDB.Entities": {
+              "target": "Package",
+              "version": "[20.26.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Biblioteca\\BibliotecaApi\\BibliotecaTeste\\BibliotecaTeste.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Biblioteca\\BibliotecaApi\\BibliotecaTeste\\BibliotecaTeste.csproj",
+        "projectName": "BibliotecaTeste",
+        "projectPath": "E:\\Biblioteca\\BibliotecaApi\\BibliotecaTeste\\BibliotecaTeste.csproj",
+        "packagesPath": "C:\\Users\\NoremZ\\.nuget\\packages\\",
+        "outputPath": "E:\\Biblioteca\\BibliotecaApi\\BibliotecaTeste\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NoremZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\Biblioteca\\BibliotecaApi\\BibliotecaDLL\\BibliotecaDLL.csproj": {
+                "projectPath": "E:\\Biblioteca\\BibliotecaApi\\BibliotecaDLL\\BibliotecaDLL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

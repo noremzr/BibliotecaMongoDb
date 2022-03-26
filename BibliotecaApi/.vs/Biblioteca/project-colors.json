@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4567c5d1-a397-4d89-8906-d54458feaeb7": {
+      "ProjectGuid": "4567c5d1-a397-4d89-8906-d54458feaeb7",
+      "DisplayName": "Biblioteca",
+      "ColorIndex": 0
+    },
+    "d7bf69a3-e9ba-4a24-bb60-098478562733": {
+      "ProjectGuid": "d7bf69a3-e9ba-4a24-bb60-098478562733",
+      "DisplayName": "BibliotecaDLL",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
